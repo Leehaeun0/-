@@ -19,7 +19,8 @@ a{
     /* position: fixed; */
     position: sticky; 
     top: 0; 
-    background-color: rgb(169, 202, 245);
+    background-color: #fff;
+    /* background-color: rgb(169, 202, 245); */
     width: auto;
     height: 70px;
     padding: 25px 30px;
@@ -53,27 +54,39 @@ a{
 /* 비주얼 */
 .morepage-visual{
     /* 666고정 말고 반응형 가능하게 수정 */
+    /* ???이미지가 잘 보이게 줄어드는 반응형 어떻게? */
     height: 666px;
+    width: 100%;
+    background-size: cover;
     overflow: hidden;
+    /* background: linear-gradient(180deg, #bbb, #bbb); */
+    background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url(../img-logo/visual.jpg);
+    /* background-color: blue; */
+    background-position: 0px 0px 0px 0px;
 }
-.morepage-visual img{
-    /* background-image: url("./img-logo/visual.jpg"); */
+/* .morepage-visual img{
+    background-image: url("./img-logo/visual.jpg");
     width: 100%;
     height: initial;
-    /* position: absolute; */
     opacity: 50%;
-}
+} */
 .morepage-visual h2{
-    margin: 0;
-    color: #000;
+    /* ???마진 오토 가운데 정렬 왜 안되는지 */
+    margin: 180px auto 90px auto;
+    color: #fff;
+    font-size: 60px;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
     /* z-index: 9999; */
 }
 
 /* 메인 */
 .main-container{
-    background-color: lightgray;
-    padding: 0 170px;
-    margin: 0;
+    /* background-color: lightgray; */
+    /* padding: 0 170px; */
+    width: 940px;
+    margin: 0 auto;
     /* 패딩 없이 가운데 정렬 알아볼 것 */
 }
 .main-container p{
@@ -104,29 +117,39 @@ a{
     padding: 9px 30px 10px 30px;
 }
 
+/* 리스트 */
 .morepage-list-items{
+    /* background-color: yellowgreen; */
     margin-top: 25px;
+    /* width: 800px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.morepage-list-items a{
-    display: inline-block;
+.morepage-list-items a:nth-child(16)::after{
+    /* 스페이스 비트윈 문제 해결...어떻게.. */
 }
 .morepage-list-items img{
-    /* width: 300px;
-    height: 200px; */
+    /* background-color: red; */
+    width: 300px;
+    height: 200px;
 }
 .morepage-list-items p{
     /* align-items: center; */
+    /* background-color: pink; */
     font-size: 20px;
     color: #1a1b1f;
     line-height: 34px;
     font-weight: 400;
-    padding: 26px 0;
-    /* text-align: center; */
+    padding: 16px 0 24px 0;
+    text-align: center;
 }
-
+.morepage-list-items p:hover{
+    opacity: 70%;
+}
 /* 푸터 */
 .footer{
-    background-color: rgb(224, 252, 193);
+    /* background-color: rgb(224, 252, 193); */
     margin: 0;
     padding: 40px 50px;
 }
@@ -138,7 +161,7 @@ a{
 }
 .footer address{
     display: inline-block;
-    background-color: lime;
+    /* background-color: lime; */
     opacity: 0.5;
     letter-spacing: -0.13px;
     color: rgba(26, 27, 31, 0.5);
@@ -152,13 +175,13 @@ footer address:hover{
 }
 .footer ul{
     float: right;
-    background-color: yellow;
+    /* background-color: yellow; */
     margin: 0;
     padding: 30px 0;
     display: flex;
 }
 .footer li{
-    background-color: pink;
+    /* background-color: pink; */
     padding: 0 20px;
     /* display: inline-block; */
     list-style: none;
@@ -167,7 +190,6 @@ footer address:hover{
     line-height: 20px;
     letter-spacing: 1px;
     opacity: 0.6;
-    
 }
 /* ???
     .footer address, .footer ul{
