@@ -45,7 +45,6 @@ a{
     padding: 10px 20px;
     /*라인 하이츠로 로고와 높이 맞추고 가운데 정렬 맞추기 */
     line-height: 50px;
-    
     color: #055cf5;
     font-size: 11px;
     font-weight: 600;
@@ -54,15 +53,14 @@ a{
 /* 비주얼 */
 .morepage-visual{
     /* 666고정 말고 반응형 가능하게 수정 */
-    /* ???이미지가 잘 보이게 줄어드는 반응형 어떻게? */
-    height: 666px;
+     height: 666px;
     width: 100%;
     background-size: cover;
     overflow: hidden;
-    /* background: linear-gradient(180deg, #bbb, #bbb); */
     background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url(../img-logo/visual.jpg);
     /* background-color: blue; */
-    background-position: 0px 0px 0px 0px;
+    background-position: 50% 50%; 
+    /* 이미지가 잘 보이게 줄어드는 반응형 백그라운드 포지션으로 조절가능*/
 }
 /* .morepage-visual img{
     background-image: url("./img-logo/visual.jpg");
@@ -78,7 +76,6 @@ a{
     text-align: center;
     font-family: Montserrat, sans-serif;
     font-weight: 400;
-    /* z-index: 9999; */
 }
 
 /* 메인 */
@@ -87,7 +84,6 @@ a{
     /* padding: 0 170px; */
     width: 940px;
     margin: 0 auto;
-    /* 패딩 없이 가운데 정렬 알아볼 것 */
 }
 .main-container p{
     margin: 0;
@@ -99,6 +95,7 @@ a{
     margin: 0;
     padding: 35px 0 0 0;
 }
+/* 플랙스로 고쳐볼것 */
 .morepage-submenu li{
     display: inline-block;
     list-style: none;
@@ -110,7 +107,7 @@ a{
     font-size: 16px;
     line-height: 28px;
 }
-/* 박스 1픽셀 영향 안받도록 수정 */
+/* 박스 1픽셀 영향 안받도록 수정함 */
 .morepage-submenu li:hover{
     color: rgb(143, 143, 143);
     border-bottom: 1px solid #222222;
@@ -126,42 +123,54 @@ a{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.morepage-list-items a:nth-child(16)::after{
-    /* 스페이스 비트윈 문제 해결...어떻게.. */
+.morepage-list-items a:last-child{
+    margin-right: auto;
+    /* flex-grow: 1; */
+    margin-left: 20px;
+    /* 스페이스 비트윈 문제 해결 방법! */
 }
 .morepage-list-items img{
-    /* background-color: red; */
+    /* display: block;
+    vertical-align: top;
+    이미지 밑에 2px 공백 문제 해결 */
     width: 300px;
     height: 200px;
 }
 .morepage-list-items p{
-    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    /* ? */
     /* background-color: pink; */
     font-size: 20px;
     color: #1a1b1f;
     line-height: 34px;
     font-weight: 400;
     padding: 16px 0 24px 0;
-    text-align: center;
+    /* text-align: center; */
+}
+.morepage-list-items div{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: #1a1b1f;
+    font-weight: 400;
 }
 .morepage-list-items p:hover{
     opacity: 70%;
 }
 /* 푸터 */
 .footer{
-    /* background-color: rgb(224, 252, 193); */
+    background-color: rgb(224, 252, 193);
     margin: 0;
     padding: 40px 50px;
 }
 .footer div{
-    /* display: flex;
-    ???스페이스 비트윈 왜 안돼
-    justify-content: space-between; */
-    /* align-content: center; */
+    display: flex;
+    justify-content: space-between;
 }
 .footer address{
     display: inline-block;
-    /* background-color: lime; */
+    background-color: lime;
     opacity: 0.5;
     letter-spacing: -0.13px;
     color: rgba(26, 27, 31, 0.5);
@@ -174,16 +183,16 @@ footer address:hover{
     opacity: 100%;
 }
 .footer ul{
-    float: right;
-    /* background-color: yellow; */
+    /* float: right; 
+    이거때문에 클리어 픽스를 넣었다가 flex에서 스페이스 비트윈이
+    에프터영역이 있다고 인식하여 안 먹었었다. */
+    background-color: yellow;
     margin: 0;
     padding: 30px 0;
     display: flex;
 }
 .footer li{
-    /* background-color: pink; */
     padding: 0 20px;
-    /* display: inline-block; */
     list-style: none;
     color: #1a1b1f;
     font-size: 14px;
