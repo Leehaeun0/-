@@ -190,6 +190,14 @@ a{
 .footer span{
     font-style: normal; 
 }
+.footer address span:nth-child(n+2)::before{
+    content: "";
+    background-color: rgba(26, 27, 31, 0.5);
+    width: 1.3px;
+    height: 12px;
+    display: inline-block;
+    vertical-align: -4%;
+}
 .morepage-footer-adress:hover{
     opacity: 100%;
 }
