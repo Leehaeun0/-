@@ -14,26 +14,35 @@ a{
     text-decoration: none;
     color: inherit;
   }
+  .a11y-hidden, legend {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0,0,0,0);
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
 
 /* 헤더 */
 /* 양쪽다 플로트를 줬는데 왜 높이값을 안잃는지 */
 .header{
     box-sizing: border-box;
-    position: fixed; 
+    /* position: fixed;  */
     top: 0;
     left: 0;
     background-color: pink;
-    /* background-color: rgb(169, 202, 245); */
     width: 100%;
     /* height: 130px; */
     /* padding: 25px 30px; */
     z-index: 10;
+
     /* display: flex;
     justify-content: space-between;
     플랙스로 해도 정렬이 되긴 하나 플로트로 한번 더 해볼것 */
 }
 .logo{
-    /* background-color: yellow; */
+    background-color: yellow;
     float: left;
     margin: 0;
     padding: 27.5px 20px;
@@ -41,8 +50,7 @@ a{
     /* margin-left: 74px; */
 }
 .home-menu{
-    display: block;
-    /* background-color: pink; */
+    background-color: skyblue;
     float: right;
     margin: auto 0;
     padding: 10px 20px;
@@ -55,7 +63,6 @@ a{
 
 /* 비주얼 */
 .morepage-visual{
-    /* 666고정 말고 반응형 가능하게 수정 */
     height: 666px;
     width: 100%;
     background-size: cover;
@@ -63,7 +70,7 @@ a{
     background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url(../img-logo/visual.jpg);
     /* background-color: blue; */
     background-position: 50% 50%; 
-    /* 이미지가 잘 보이게 줄어드는 반응형 백그라운드 포지션으로 조절가능*/
+    /* 이미지가 잘 보이게 줄어드는 반응형 - 백그라운드 포지션으로 위치 조절가능*/
 }
 /* .morepage-visual img{
     background-image: url("./img-logo/visual.jpg");
@@ -72,7 +79,6 @@ a{
     opacity: 50%;
 } */
 .morepage-visual-title{
-    /* ???마진 오토 가운데 정렬 왜 안되는지 */
     display: block;
     margin: 180px auto 90px auto;
     color: #fff;
@@ -83,9 +89,7 @@ a{
 }
 
 /* 메인 */
-.main-container{
-    /* background-color: lightgray; */
-    /* padding: 0 170px; */
+.morepage-list{
     width: 940px;
     margin: 0 auto;
 }
@@ -94,14 +98,20 @@ a{
     padding: 0;
 }
 
+
 /* 메뉴 */
-.morepage-submenu{
+.morepage-list-menu{
     margin: 0;
     padding: 35px 0 0 0;
+    /* margin: 0 auto;
+    width: ?PX;
+    마진 오토는 두번연속쓰면 수치 계산하기 어렵다.. */
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
-/* 플랙스로 고쳐볼것 */
-.morepage-submenu li{
-    display: inline-block;
+.morepage-list-menu li{
+    /* display: inline-block; */
     list-style: none;
     padding: 9px 30px 11px 30px;
     margin: 0;
@@ -112,17 +122,16 @@ a{
     line-height: 28px;
 }
 /* 박스 1픽셀 영향 안받도록 수정함 */
-.morepage-submenu li:hover{
-    color: rgb(143, 143, 143);
+.morepage-list-menu li:hover{
+    color:rgba(50, 52, 58, 0.5);
     border-bottom: 1px solid #222222;
     padding: 9px 30px 10px 30px;
 }
 
+
 /* 리스트 */
 .morepage-list-items{
-    /* background-color: yellowgreen; */
     margin-top: 25px;
-    /* width: 800px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -130,12 +139,12 @@ a{
 .morepage-list-items a:last-child{
     margin-right: auto;
     /* flex-grow: 1; */
+    /* 스페이스 비트윈 문제 해결 방법 두가지! */
     margin-left: 20px;
-    /* 스페이스 비트윈 문제 해결 방법! */
 }
 .morepage-list-items img{
-    /* display: block;
-    vertical-align: top;
+    display: block;
+    /* vertical-align: top;
     이미지 밑에 2px 공백 문제 해결 */
     width: 300px;
     height: 200px;
@@ -143,59 +152,61 @@ a{
 .morepage-list-items p{
     display: flex;
     justify-content: center;
-    /* ? */
-    background-color: pink;
+    /* text-align: center; */
     font-size: 20px;
     color: #1a1b1f;
     line-height: 34px;
     font-weight: 400;
     padding: 16px 0 24px 0;
-    /* text-align: center; */
+    margin: 0;
 }
-.morepage-list-items div{
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    color: #1a1b1f;
-    font-weight: 400;
-}
-.morepage-list-items p:hover{
+.morepage-list-items a:hover{
     opacity: 70%;
 }
+
+
 /* 푸터 */
 .footer{
-    background-color: rgb(224, 252, 193);
     margin: 0;
     padding: 40px 50px;
-}
-.footer div{
     display: flex;
     justify-content: space-between;
 }
-.footer address{
+.morepage-footer-adress{
     display: inline-block;
-    background-color: lime;
     opacity: 0.5;
     letter-spacing: -0.13px;
-    color: rgba(26, 27, 31, 0.5);
+    color: #1a1b1f;
     line-height: 20px;
     font-size: 12.5px;
     font-style: normal;
     max-width: 450px;
 }
-footer address:hover{
+.footer span{
+    font-style: normal; 
+}
+.footer address span:nth-child(n+2)::before{
+    content: "";
+    background-color: rgba(26, 27, 31, 0.5);
+    width: 1.3px;
+    height: 12px;
+    display: inline-block;
+    vertical-align: -4%;
+}
+.morepage-footer-adress:hover{
     opacity: 100%;
 }
-.footer ul{
+.morepage-footer-adress address{
+    display: inline;
+}
+.morepage-footer-link{
     /* float: right; 
     이거때문에 클리어 픽스를 넣었다가 flex에서 스페이스 비트윈이
-    에프터영역이 있다고 인식하여 안 먹었었다. */
-    background-color: yellow;
-    margin: 0;
+    에프터영역이 있다고 인식하여 제대로 안 먹었었다. */
     padding: 30px 0;
     display: flex;
 }
-.footer li{
+.morepage-footer-link a{
     padding: 0 20px;
     list-style: none;
     color: #1a1b1f;
@@ -203,11 +214,8 @@ footer address:hover{
     line-height: 20px;
     letter-spacing: 1px;
     opacity: 0.6;
+    width: 63px;
 }
-/* ???
-    .footer address, .footer ul{
-    vertical-align: middle;
-} */
-footer li:hover{
+.morepage-footer-link a:hover{
     opacity: 100%;
 }
