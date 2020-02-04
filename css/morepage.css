@@ -82,7 +82,7 @@ a{
     /* 반응형때 이미지 위치가 잘 보이게 줄어들게 하려면 백그라운드 포지션으로 조절가능*/
 }
 .morepage-visual-title{
-    /* ???마진 오토 가운데 정렬 왜 안되는지 */
+    /* ?마진 오토 가운데 정렬은 width값을 안줘서 안됐었다... */
     display: block;
     margin: 180px auto 90px auto;
     color: #fff;
