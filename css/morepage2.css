@@ -18,7 +18,6 @@ a{
     position: absolute; 
     width: 1px;
     height: 1px;
-    overflow: hidden;
     margin: -1px;
     clip: rect(0,0,0,0);
     clip-path: polygon(0 0, 0 0, 0 0);
@@ -28,13 +27,12 @@ a{
 /* 양쪽다 플로트를 줬는데 왜 높이값을 안잃는지 */
 .header{
     box-sizing: border-box;
-    /* position: fixed;  */
+    position: fixed; 
     top: 0;
     left: 0;
     background-color: pink;
     width: 100%;
-    /* height: 130px; */
-    /* padding: 25px 30px; */
+    padding: 25px 30px;
     z-index: 10;
 
     /* display: flex;
@@ -63,7 +61,7 @@ a{
 
 /* 비주얼 */
 .morepage-visual{
-    height: 666px;
+    height: 610px;
     width: 100%;
     background-size: cover;
     overflow: hidden;

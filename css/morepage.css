@@ -1,6 +1,3 @@
-/* font-family: 'Noto Sans KR', sans-serif; */
-/* font-family: 'Montserrat', sans-serif; */
-
 body{
     padding: 0;
     margin: 0;
@@ -14,7 +11,7 @@ a{
     text-decoration: none;
     color: inherit;
   }
-.a11y-hidden, legend {
+.a11y-hidden{
     position: absolute; 
     width: 1px;
     height: 1px;
@@ -73,17 +70,22 @@ a{
     margin: 130px 0 0 0;
 }
 .morepage-visual{
-    height: 666px;
+    height: 610px;
     width: 100%;
-    background-size: cover;
-    overflow: hidden;
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url(../img-logo/visual.jpg);
+    /* 백그라운드 명령어를 먼저 주고나서 백그라운드 속성들을 줘야한다. */
     background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url(../img-logo/visual.jpg);
-    background-position: 50% 50%; 
+    background-color: #aaa;  
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat; 
+    overflow: hidden;
     /* 반응형때 이미지 위치가 잘 보이게 줄어들게 하려면 백그라운드 포지션으로 조절가능*/
 }
 .morepage-visual-title{
-    /* ?마진 오토 가운데 정렬은 width값을 안줘서 안됐었다... */
+    /* 마진 오토 가운데 정렬은 width값을 안줘서 안됐었음 */
     display: block;
+    /* padding: 180px auto 90px auto; ?? */
     margin: 180px auto 90px auto;
     color: #fff;
     font-size: 60px;
@@ -110,7 +112,7 @@ a{
     padding: 35px 0 0 0;
     /* margin: 0 auto;
     width: ?PX;
-    마진 오토는 두번연속쓰면 수치 계산하기 어렵다.. */
+    마진 오토는 두번연속쓰면 수치 계산하기 어렵다. */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -136,12 +138,16 @@ a{
 
 /* 리스트 */
 .morepage-list-items{
+    padding: 0;
     margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.morepage-list-items a:last-child{
+.morepage-list-items li{
+    list-style: none;
+}
+.morepage-list-items li:last-child{
     margin-right: auto;
     /* flex-grow: 1; */
     /* 스페이스 비트윈 문제 해결 방법 두가지! */
@@ -165,7 +171,7 @@ a{
     padding: 16px 0 24px 0;
     margin: 0;
 }
-.morepage-list-items a:hover{
+.morepage-list-items li:hover{
     opacity: 70%;
 }
 
