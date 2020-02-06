@@ -80,7 +80,7 @@ a{
     background-position: 50% 0;
     background-repeat: no-repeat; 
     overflow: hidden;
-    /* 반응형때 이미지 위치가 잘 보이게 줄어들게 하려면 백그라운드 포지션으로 조절가능*/
+    /* 반응형때 이미지 위치가 잘 보이게 줄어들게 하려면 백그라운드 포지션으로 조절*/
 }
 .morepage-visual-title{
     /* 마진 오토 가운데 정렬은 width값을 안줘서 안됐었음 */
